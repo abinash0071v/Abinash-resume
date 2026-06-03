@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abinash V | Website Profile</title>
+    <style>
+        :root {
+            --primary: #1F4E78;
+            --secondary: #1a3854;
+            --text-main: #333333;
+            --text-light: #555555;
+            --bg-body: #f4f6f9;
+            --sidebar-text: #d1dfed;
+            --accent: #2980b9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+        }
+
+        /* Sidebar Styling */
+        .profile-sidebar {
+            background-color: var(--secondary);
+            color: #ffffff;
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 180px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .sidebar-section {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-section h3 {
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .info-link {
+            color: #3498db;
+            text-decoration: none;
+            word-break: break-all;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .info-link:hover {
+            color: #5dade2;
+            text-decoration: underline;
+        }
+
+        .sidebar-p {
+            font-size: 0.9rem;
+            color: var(--sidebar-text);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .sidebar-p strong {
+            color: #ffffff;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Main Content Styling */
+        .profile-main {
+            padding: 45px;
+            background: #ffffff;
+        }
+
+        .profile-name {
+            font-size: 2.4rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .profile-tagline {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 35px;
+        }
+
+        .content-block {
+            margin-bottom: 30px;
+        }
+
+        .block-title {
+            font-size: 1.15rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .block-divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin-bottom: 15px;
+        }
+
+        .block-text {
+            font-size: 11pt;
+            color: var(--text-main);
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        /* Job & Education Headings */
+        .meta-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+
+        .meta-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #111111;
+        }
+
+        .meta-org {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .meta-date {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* List Layouts */
+        .profile-list {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+
+        .profile-list li {
+            font-size: 11pt;
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        .profile-list li::before {
+            content: "■";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--primary);
+            font-size: 0.75rem;
+        }
+
+        /* Grid Layouts */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .skill-group {
+            font-size: 11pt;
+            line-height: 1.4;
+        }
+
+        .skill-group strong {
+            color: var(--primary);
+        }
+
+        /* Responsive Configuration */
+        @media (max-width: 850px) {
+            .profile-card {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 15px;
+            }
+            .profile-main {
+                padding: 25px;
+            }
+            .meta-header {
+                flex-direction: column;
+            }
+            .meta-date {
+                margin-top: 2px;
+                margin-bottom: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-card">
+    
+    <!-- LEFT SIDEBAR: Photo & Core Metadata -->
+    <aside class="profile-sidebar">
+        <img class="avatar" src="Abin Photo.jpeg" alt="Abinash V">
+        
+        <div class="sidebar-section">
+            <h3>Contact Details</h3>
+            <p class="sidebar-p"><strong>Mobile:</strong> +91 6379113912</p>
+            <p class="sidebar-p"><strong>Email:</strong> abinash0071.v@gmail.com</p>
+            <p class="sidebar-p"><strong>Address:</strong> 3, Sorojini Nagar, Vridhachalam Po & Tk, Cuddalore Dt - 606001</p>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Professional Network</h3>
+            <p class="sidebar-p"><strong>LinkedIn Profile:</strong> 
+               <a class="info-link" href="http://www.linkedin.com/in/abinash-v-75bb73232" target="_blank">linkedin.com/in/abinash-v-75bb73232</a>
+            </p>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Personal Profile</h3>
+            <p class="sidebar-p"><strong>Father's Name:</strong> Mr. D. Vaithiyanathan</p>
+            <p class="sidebar-p"><strong>Mother's Name:</strong> Ms. V. Arulmozhi</p>
+            <p class="sidebar-p"><strong>Date of Birth:</strong> January 7, 2001</p>
+            <p class="sidebar-p"><strong>Languages:</strong> Tamil, English (Professional Proficiency)</p>
+        </div>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT: Professional Dossier -->
+    <main class="profile-main">
+        <header>
+            <h1 class="profile-name">ABINASH V</h1>
+            <div class="profile-tagline">Mainframe Operations & Production Support Engineer</div>
+        </header>
+
+        <section class="content-block">
+            <div class="block-title">Career Objective</div>
+            <div class="block-divider"></div>
+            <p class="block-text">An analytical and highly capable Mainframe Operations & Production Support Engineer with nearly 4 years of hands-on corporate experience within Broadridge's core Mainframe Operations division. Specialized in monitoring large-scale IBM Mainframe batch ecosystems, managing complex job workflows using IBM Tivoli Workload Scheduler (TWS), and executing end-to-end 24x7 support operations for critical Investor Services. Adept at handling shift handovers, diagnosing operational abends, and ensuring high-quality, SLA-compliant deliverables across domestic and onshore workflows.</p>
+        </section>
+
+        <section class="content-block">
+            <div class="block-title">Professional Experience</div>
+            <div class="block-divider"></div>
+            
+            <div class="meta-header">
+                <span class="meta-title">Mainframe Operations & Production Support Engineer</span>
+                <span class="meta-date">July 18, 2022 – Present</span>
+            </div>
+            <div class="meta-org">Broadridge Financial Solutions, Bengaluru</div>
+            
+            <ul class="profile-list">
+                <li>Execute end-to-end 24x7 application support and live batch production monitoring for business-critical Mainframe ecosystems supporting high-impact Investor Services and operations.</li>
+                <li>Manage automated enterprise workloads, job dependencies, triggers, and schedules using IBM Tivoli Workload Scheduler (TWS) to maximize processing efficiency.</li>
+                <li>Analyze, construct, and modify Job Control Language (JCL) streams, applying parameter overrides and conditional controls to remediate processing bottlenecks.</li>
+                <li>Perform first-line diagnostic investigation for batch job abends (including S0C4, S806 execution errors and SB37, B37 space allocations) to achieve rapid resolution on the 1st callout.</li>
+                <li>Coordinate closely with specialized cross-functional teams (including DB2, CICS, and application SME groups) to track, troubleshoot, and thoroughly resolve complex batch infrastructure faults.</li>
+                <li>Manage the complete lifecycle of production incidents using Remedy/BMC ITSM tools, ensuring ticket trackers are meticulously updated and deliverables are met within strict domestic and onshore SLA boundaries.</li>
+                <li>Monitor high-priority processing flows, track pending jobs, and coordinate resource allocation protocols to proactively alert teams to potential SLA breaches or delayed runs.</li>
+                <li>Enforce rigorous operational governance by parsing previous batch shift handover logs and delivering detailed shift handover reports to onshore and offshore management teams.</li>
+                <li>Leverage essential IBM Mainframe utilities (IDCAMS for VSAM structures, IEBGENER, IEFBR14) to track and verify Generation Data Groups (GDGs) and data catalog integrity.</li>
+                <li>Perform production syntax validations (TYPRUN=SCAN) during change promotions to protect the core production environment from improper code deployment faults.</li>
+            </ul>
+        </section>
+
+        <section class="content-block">
+            <div class="block-title">Technical Skills Matrix</div>
+            <div class="block-divider"></div>
+            <div class="skills-grid">
+                <div class="skill-group"><strong>Mainframe Environments:</strong> IBM z/OS, TSO/ISPF, SDSF, JES2</div>
+                <div class="skill-group"><strong>Scheduling Software:</strong> IBM Tivoli Workload Scheduler (TWS)</div>
+                <div class="skill-group"><strong>Core Concepts & Languages:</strong> Job Control Language (JCL), COBOL, DB2, CICS Basis, Abend Code Interpretation, Conditional Processing (COND, IF/THEN/ELSE)</div>
+                <div class="skill-group"><strong>Mainframe Utilities:</strong> IEBGENER, IEFBR14, IDCAMS (VSAM management), DFSORT/ICEGENER, GDG Management</div>
+                <div class="skill-group"><strong>Industrial Automation & Scripting:</strong> PLC (WBL Software), SCADA (InTouch Software), Python Programming</div>
+                <div class="skill-group"><strong>Office Utilities:</strong> MS Office (Word, Excel, PowerPoint)</div>
+            </div>
+        </section>
+
+        <section class="content-block">
+            <div class="block-title">Educational Qualification</div>
+            <div class="block-divider"></div>
+            <div class="meta-header">
+                <span class="meta-title">B.E. (Electronics & Instrumentation Engineering)</span>
+                <span class="meta-date">Class of 2022</span>
+            </div>
+            <div class="meta-org">Annamalai University, Chidambaram | Final Score: 78.5%</div>
+        </section>
+
+        <section class="content-block">
+            <div class="block-title">Internships & Industrial Training</div>
+            <div class="block-divider"></div>
+            <p class="block-text"><strong>Industrial Automation Internship at AGIIT</strong><br>
+            <span style="font-style: italic; color: var(--text-light);">Acquired structured technical competency with automated sequencing frameworks, PLC programming architectures, and SCADA control system integration.</span></p>
+        </section>
+
+        <section class="content-block">
+            <div class="block-title">Industrial Visits</div>
+            <div class="block-divider"></div>
+            <ul class="profile-list">
+                <li><strong>NLC India Limited, Neyveli:</strong> Observed operational structures of centralized power plant instrumentation, automated console setups, and physical industrial control layers.</li>
+                <li><strong>ONGC, Karaikal:</strong> Studied real-time refinery asset tracking, sequential process handling, and safety loop controllers.</li>
+            </ul>
+        </section>
+
+        <section class="content-block">
+            <div class="block-title">Key Strengths</div>
+            <div class="block-divider"></div>
+            <ul class="profile-list">
+                <li><strong>Analytical Thinker:</strong> Adept at breaking down execution errors, reading step logs, and mapping complex system paths.</li>
+                <li><strong>Proactive & SLA-Driven:</strong> Proven experience handling live enterprise production windows with high technical dependability.</li>
+                <li><strong>Adaptable Learner:</strong> Quickly integrates baseline engineering logic into multi-tiered transactional and infrastructure management systems.</li>
+            </ul>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
