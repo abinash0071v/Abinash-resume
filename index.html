@@ -149,7 +149,7 @@
             line-height: 1.5;
         }
 
-        /* Job & Education Headings */
+        /* Job & Meta Headings */
         .meta-header {
             display: flex;
             justify-content: space-between;
@@ -174,6 +174,33 @@
             font-size: 0.95rem;
             font-weight: bold;
             color: var(--primary);
+        }
+
+        /* Education Table Styling */
+        .edu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 10.5pt;
+        }
+
+        .edu-table th, .edu-table td {
+            border: 1px solid #e0e0e0;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        .edu-table th {
+            background-color: #f4f6f9;
+            color: var(--primary);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .edu-table tr:nth-child(even) {
+            background-color: #fafafa;
         }
 
         /* List Layouts */
@@ -234,6 +261,10 @@
                 margin-top: 2px;
                 margin-bottom: 6px;
             }
+            .edu-table {
+                display: block;
+                overflow-x: auto;
+            }
         }
     </style>
 </head>
@@ -248,7 +279,7 @@
         <div class="sidebar-section">
             <h3>Contact Details</h3>
             <p class="sidebar-p"><strong>Mobile:</strong> +91 6379113912</p>
-            <p class="sidebar-p"><strong>Email:</strong> abinash0071.v@gmail.com</p>
+            <p class="sidebar-p"><strong>Email:</strong> abinashvaithiyanthan@gmail.com</p>
             <p class="sidebar-p"><strong>Address:</strong> 3, Sorojini Nagar, Vridhachalam Po & Tk, Cuddalore Dt - 606001</p>
         </div>
 
@@ -321,11 +352,36 @@
         <section class="content-block">
             <div class="block-title">Educational Qualification</div>
             <div class="block-divider"></div>
-            <div class="meta-header">
-                <span class="meta-title">B.E. (Electronics & Instrumentation Engineering)</span>
-                <span class="meta-date">Class of 2022</span>
-            </div>
-            <div class="meta-org">Annamalai University, Chidambaram | Final Score: 78.5%</div>
+            <table class="edu-table">
+                <thead>
+                    <tr>
+                        <th>Year of Passing</th>
+                        <th>Qualification</th>
+                        <th>Name of Institution</th>
+                        <th>Marks Aggregate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>2018 - 2022</strong></td>
+                        <td>B.E. – Electronics and Instrumentation Engineering</td>
+                        <td>Annamalai University, Chidambaram</td>
+                        <td>78.5% (Upto 7th sem)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2016 - 2018</strong></td>
+                        <td>Higher Secondary Course Certificate (HSC)</td>
+                        <td>Senthil Matriculation Higher Secondary School, Vridhachalam</td>
+                        <td>79.16%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2015 - 2016</strong></td>
+                        <td>Secondary School Leaving Certificate (SSLC)</td>
+                        <td>Fathima Matriculation Higher Secondary School, Vridhachalam</td>
+                        <td>75.2%</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section class="content-block">
@@ -358,3 +414,7 @@
 
 </body>
 </html>
+
+
+
+
